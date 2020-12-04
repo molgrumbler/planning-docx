@@ -41,7 +41,7 @@ if __name__ == "__main__":
     
     args = parser.parse_args()
     b = datetime.date(2018,12,31)
-    numdays = 369
+    numdays = 2*369
     # numdays = 17
     # Читаем образцы четные и не четные листы
     document = docx.Document("templ1.docx")
