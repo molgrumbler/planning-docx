@@ -4,7 +4,7 @@
 import docx
 import argparse
 import datetime
-from docx.shared import Pt 
+from docx.shared import Pt,Cm 
  
 def paragraph_replace(paragraph,old,new,style):
     """ Функция ищет образец  в параграфе и заменят его новым значением
@@ -81,8 +81,22 @@ if __name__ == "__main__":
         document1 = doc_replace(document1,s,s1,style1)
         print(s1)
        
+    margin_top = Cm(0.7)
+    margin_botton = Cm(0.3)
 
+    sections = document.sections
+    for section in sections:
+        section.top_margin = margin_top
+        section.bottom_margin = margin_botton
     document.save("example.docx")
+    margin_top = Cm(0.3)
+    margin_botton = Cm(0.7)
+
+    sections = document1.sections
+    for section in sections:
+        section.top_margin = margin_top
+        section.bottom_margin = margin_botton
+
     document1.save("example1.docx")
 
 
