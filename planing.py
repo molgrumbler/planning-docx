@@ -42,7 +42,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
     b = datetime.date(2018,12,31)
     numdays = 2*369
-    # numdays = 17
+    # numdays = 7
     # Читаем образцы четные и не четные листы
     document = docx.Document("templ1.docx")
     document1 = docx.Document("templ2.docx")
@@ -81,17 +81,17 @@ if __name__ == "__main__":
         document1 = doc_replace(document1,s,s1,style1)
         print(s1)
        
-    margin_top = Cm(0.7)
-    margin_botton = Cm(0.3)
-
+    margin_top = Cm(0.8)
+    margin_botton = Cm(0.2)
     sections = document.sections
     for section in sections:
         section.top_margin = margin_top
         section.bottom_margin = margin_botton
     document.save("example.docx")
-    margin_top = Cm(0.3)
-    margin_botton = Cm(0.7)
 
+
+    margin_top = Cm(0.4)
+    margin_botton = Cm(0.6)
     sections = document1.sections
     for section in sections:
         section.top_margin = margin_top
